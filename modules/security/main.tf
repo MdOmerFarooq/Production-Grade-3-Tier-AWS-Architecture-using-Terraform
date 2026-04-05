@@ -98,7 +98,12 @@ resource "aws_security_group" "backend_sg" {
         protocol    = "tcp"
         security_groups = [aws_security_group.internal_alb_sg.id]
     }
-
+    ingress {
+        from_port   = 5000
+        to_port     = 5000
+        protocol    = "tcp"
+        security_groups = [aws_security_group.internal_alb_sg.id]
+    }
     ingress {
         from_port   = 22
         to_port     = 22

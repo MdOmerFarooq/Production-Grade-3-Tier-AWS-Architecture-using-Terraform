@@ -3,7 +3,7 @@ output "db_name" {
 }
 
 output "db_hostname_endpoint" {
-  value = aws_db_instance.postgres.endpoint
+  value = aws_db_instance.postgres.address   # was .endpoint
 }
 
 output "db_port" {

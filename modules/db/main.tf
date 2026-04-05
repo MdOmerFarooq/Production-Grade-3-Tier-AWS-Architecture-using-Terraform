@@ -12,7 +12,7 @@ resource "aws_db_subnet_group" "db_subnet" {
 resource "aws_db_instance" "postgres" {
   identifier           = "${terraform.workspace}-database"
   engine               = "postgres"
-  engine_version       = "15.3"
+  engine_version       = "15.7"
   instance_class       = "db.t3.micro"
   allocated_storage    = 20
   
