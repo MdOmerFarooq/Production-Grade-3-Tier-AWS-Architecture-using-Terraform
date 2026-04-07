@@ -19,7 +19,40 @@ This setup creates a complete infrastructure stack:
 
 ## Architecture Overview:
 
+<p align="center">
+  <img src="./assets/Architecture_Diagram.png" alt="Architecture Diagram" width="800"/>
+</p>
 
+## 🚀 Deployment Overview
+
+### Application Running
+
+![Application](./assets/screenshots/app-running.png)
+
+### Network Architecture
+
+![VPC](./assets/screenshots/vpc.png)
+
+### Load Balancer
+
+![ALB](./assets/screenshots/alb.png)
+
+### Auto Scaling
+
+![ASG](./assets/screenshots/asg.png)
+
+
+
+<details>
+<summary>Terraform Plan & Apply Output</summary>
+
+![Plan](./assets/screenshots/tf-plan-output.png)
+![Apply](./assets/screenshots/tf-apply-output.png)
+
+</details>
+
+
+## Architecture Layers
 
 The system is divided into three layers:
 
@@ -32,6 +65,7 @@ The system is divided into three layers:
 - **Frontend EC2 (ASG)**  (Private subnets across multiple AZs)
   - Pulls Docker image from ECR on startup  
   - Serves client requests  
+  - Communicates with backend services via internal load balancer
 
 - **Backend EC2 (ASG)**  (Private subnets across multiple AZs)
   - Runs API services  
@@ -98,7 +132,6 @@ The backend app is also designed to create a connection to the RDS database usin
 - Terraform state stored in S3 with encryption and versioning
 - State locking implemented via s3 backend to prevent concurrent modifications
 - Database credentials managed and rotated using AWS Secrets Manager
-
 
 ## Maintained by: Omer Farooq
 LinkedIn: https://www.linkedin.com/in/mdomerfarooq/
