@@ -1,4 +1,8 @@
-# 3-Tier AWS Architecture using Terraform (Multi-Environment Ready)
+# 3-Tier AWS Architecture using Terraform (Multi-Environment Ready) 
+
+![Terraform](https://img.shields.io/badge/Terraform-1.5+-blue)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
 This project provisions a **production-style 3-tier architecture on AWS using Terraform**, with a key focus on modular design, high availability, and automated application deployment.
 
